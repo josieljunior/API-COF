@@ -1,19 +1,19 @@
 from re import search
 from django.contrib import admin
-from api.models import Despesa, Receita
+from api.models import Expense, Income
 
 class Default(admin.ModelAdmin):
-    list_display = ('id', 'descricao', 'data', 'valor')
-    list_display_link = ('id', 'decricao')
+    list_display = ('id', 'description', 'date', 'value')
+    list_display_link = ('id', 'description')
     search_fields = ('id',)
     list_per_page = 20
 
-class Despesas(admin.ModelAdmin):
+class Expenses(admin.ModelAdmin):
     pass
 
 
-class Receitas(admin.ModelAdmin):
+class Incomes(admin.ModelAdmin):
     pass
 
-admin.site.register(Despesa, Despesas)
-admin.site.register(Receita, Receitas)
+admin.site.register(Expense, Expenses)
+admin.site.register(Income, Incomes)

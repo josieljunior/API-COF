@@ -1,15 +1,15 @@
 from django.db import models
 
 class Default(models.Model):
-    descricao = models.CharField(max_length=300, blank=False, null=False)
-    valor = models.FloatField(blank=False, null=False)
-    data = models.DateField(blank=False, null=False)
+    description = models.CharField(max_length=300, blank=False, null=False)
+    value = models.FloatField(blank=False, null=False)
+    date = models.DateField(blank=False, null=False)
 
     def __str__(self):
-        return self.descricao
+        return self.description
     
-class Despesa(Default):
+class Expense(Default):
     pass
 
-class Receita(Default):
+class Income(Default):
     pass

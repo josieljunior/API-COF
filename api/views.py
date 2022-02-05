@@ -1,17 +1,17 @@
 from rest_framework import viewsets
-from api.models import Despesa, Receita
-from api.serializer import DespesaSerializer, ReceitaSerializer
+from api.models import Expense, Income
+from api.serializer import ExpenseSerializer, IncomeSerializer
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-class DespesasViewSet(viewsets.ModelViewSet):
-    """Exibindo todas as despesas"""
-    queryset = Despesa.objects.all()
-    serializer_class = DespesaSerializer
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+class ExpensesViewSet(viewsets.ModelViewSet):
+    """Exibindo todas as Expenses"""
+    queryset = Expense.objects.all()
+    serializer_class = ExpenseSerializer
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 
-class ReceitasViewSet(viewsets.ModelViewSet):
-    """Exibindo todas as receitas"""
-    queryset = Receita.objects.all()
-    serializer_class = ReceitaSerializer
+class IncomesViewSet(viewsets.ModelViewSet):
+    """Exibindo todas as Incomes"""
+    queryset = Income.objects.all()
+    serializer_class = IncomeSerializer
